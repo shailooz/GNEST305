@@ -58,13 +58,13 @@
             letter-spacing: 0.5px;
         }
 
-        .badge-course { background: #232526; color: #c7c7c7; border: 1px solid #333; }
-        .badge-semester { background: #232526; color: #b0b3b8; border: 1px solid #333; }
-        .badge-status { background: #232526; color: #b0b3b8; border: 1px solid #333; }
-        .badge-contributions { background: #232526; color: #b0b3b8; border: 1px solid #333; }
-        .badge-license { background: #232526; color: #b0b3b8; border: 1px solid #333; }
-        .badge-ktu { background: #232526; color: #b0b3b8; border: 1px solid #333; }
-        .badge-views { background: #232526; color: #b0b3b8; border: 1px solid #333; }
+        .badge-course { background: #232526; color: #cddc39; border: 1px solid #cddc39; }         /* Lemon green */
+        .badge-semester { background: #232526; color: #3b82f6; border: 1px solid #3b82f6; }       /* Blue */
+        .badge-status { background: #232526; color: #f97316; border: 1px solid #f97316; }         /* Orange */
+        .badge-contributions { background: #232526; color: #4ecdc4; border: 1px solid #4ecdc4; }  /* Cyan */
+        .badge-license { background: #232526; color: #eab308; border: 1px solid #eab308; }        /* Yellow */
+        .badge-ktu { background: #232526; color: #e04f4f; border: 1px solid #e04f4f; }           /* Red */
+        .badge-views { background: #232526; color: #b0b3b8; border: 1px solid #b0b3b8; }          /* Gray */
 
         h1 {
             font-size: 1.7rem;
@@ -254,8 +254,30 @@
         .overview-icon {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
-            color: #cddc39;
         }
+        /* Colorful icons for overview section */
+        .overview-item .fa-file-alt { color: #cddc39; }         /* Lemon green */
+        .overview-item .fa-map { color: #f59e42; }              /* Orange */
+        .overview-item .fa-file-powerpoint { color: #e04f4f; }  /* Red */
+        .overview-item .fa-python { color: #4ecdc4; }           /* Cyan */
+
+        /* Colorful module titles */
+        .module-title span[style*="#26a641"] { color: #26a641; }    /* Green */
+        .module-title span[style*="#f97316"] { color: #f59e42; }    /* Orange */
+        .module-title span[style*="#3b82f6"] { color: #3b82f6; }    /* Blue */
+        .module-title span[style*="#eab308"] { color: #eab308; }    /* Yellow */
+
+        /* Resource icons */
+        .icon-slides { color: #e04f4f; }
+        .icon-code { color: #4ecdc4; }
+        .icon-app { color: #f59e42; }
+
+        /* Section titles */
+        .section-title { color: #b0ff57; background: linear-gradient(90deg,#cddc39,#f59e42,#3b82f6,#eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        /* Links */
+        a, a:visited { color: #b0ff57; }
+        a:hover { color: #f59e42; }
 
         @media (max-width: 768px) {
             .container {
