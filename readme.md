@@ -63,7 +63,7 @@ This repository contains:
 
 - [📄 Slides: Data Science Overview](slides/14_data_science.pdf)
 - [📄 Slides: Visualization](slides/15_visualization.pdf)
-- [📄 Slides: Power BI](slides/16_power_bi.pdf)
+- [📄 Slides: Power BI](slides/16_power_bi.pdf)(codes/powerbi/Experimented.pbix)
 - [📄 Slides: Python](slides/17_python.pdf)
 - [🐍 Codes: Python Brushup](codes/python/python_brushup.ipynb)
 - [🐍 Codes: Pandas](codes/python/pandas.ipynb)
