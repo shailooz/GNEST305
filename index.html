@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTU S3: Introduction to AI and Data Science (GNEST305)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            color: #c9d1d9;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #21262d 0%, #30363d 100%);
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-course { background: #1f6feb; color: white; }
+        .badge-semester { background: #8b5cf6; color: white; }
+        .badge-status { background: #238636; color: white; }
+        .badge-contributions { background: #26a641; color: white; }
+        .badge-license { background: #f9c23c; color: #24292f; }
+        .badge-ktu { background: #da3633; color: white; }
+        .badge-views { background: #6f42c1; color: white; }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .course-info {
+            background: #21262d;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #58a6ff;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #21262d 0%, #30363d 100%);
+            padding: 1.5rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #58a6ff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-content {
+            padding: 1.5rem;
+        }
+
+        .module {
+            margin-bottom: 2rem;
+        }
+
+        .module-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #79c0ff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resource-list {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .resource-item {
+            background: #21262d;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #c9d1d9;
+        }
+
+        .resource-item:hover {
+            background: #30363d;
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
+        }
+
+        .resource-icon {
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .icon-slides { color: #f85149; }
+        .icon-code { color: #7c3aed; }
+        .icon-app { color: #238636; }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .tool-item {
+            background: #21262d;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .creator-section {
+            background: linear-gradient(135deg, #21262d 0%, #30363d 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            margin-top: 2rem;
+        }
+
+        .creator-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .creator-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #58a6ff;
+            object-fit: cover;
+        }
+
+        .creator-info h3 {
+            color: #58a6ff;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .creator-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .creator-link {
+            color: #79c0ff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .creator-link:hover {
+            color: #58a6ff;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .overview-item {
+            background: #21262d;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .overview-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .overview-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #58a6ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .badges {
+                justify-content: center;
+            }
+            
+            .creator-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="badges">
+                <span class="badge badge-course">Course: GNEST305</span>
+                <span class="badge badge-semester">Semester: S3</span>
+                <span class="badge badge-status">Status: Active</span>
+                <span class="badge badge-contributions">Contributions: Welcome</span>
+                <span class="badge badge-license">License: MIT</span>
+                <span class="badge badge-ktu">KTU: AI-DS</span>
+                <span class="badge badge-views">Views: Active</span>
+            </div>
+            
+            <h1><i class="fas fa-graduation-cap"></i> KTU S3: Introduction to Artificial Intelligence and Data Science</h1>
+            
+            <div class="course-info">
+                <strong>Credits:</strong> 4 | <strong>CIE Marks:</strong> 40 | <strong>ESE Marks:</strong> 60 | <strong>Exam:</strong> 2 Hrs 30 Min<br>
+                <strong>Teaching Hours:</strong> L:T:P:R = 3:1:0:0
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-bookmark"></i>
+                    Repository Overview
+                </h2>
+            </div>
+            <div class="section-content">
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <div class="overview-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Syllabus</h3>
+                        <p>Complete course syllabus and curriculum</p>
+                    </div>
+                    <div class="overview-item">
+                        <div class="overview-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <h3>Route Map to AI</h3>
+                        <p>Comprehensive learning pathway guide</p>
+                    </div>
+                    <div class="overview-item">
+                        <div class="overview-icon">
+                            <i class="fas fa-presentation"></i>
+                        </div>
+                        <h3>Slides</h3>
+                        <p>Topic-wise presentation materials</p>
+                    </div>
+                    <div class="overview-item">
+                        <div class="overview-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3>Programming</h3>
+                        <p>Python notebooks and datasets</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-book"></i>
+                    Module-wise Structured Index
+                </h2>
+            </div>
+            <div class="section-content">
+                <div class="module">
+                    <h3 class="module-title">
+                        <span style="color: #26a641;">🟩</span>
+                        Module 1: Introduction to AI and Machine Learning
+                    </h3>
+                    <div class="resource-list">
+                        <a href="slides/01_ml_intro.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Introduction to Machine Learning</span>
+                        </a>
+                        <a href="slides/09_classifiation.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Classification</span>
+                        </a>
+                        <a href="codes/classifcation/classification.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Classification</span>
+                        </a>
+                        <a href="codes/classifcation/Social_Media.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Social Media Classification</span>
+                        </a>
+                        <a href="slides/11_clustering.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Clustering</span>
+                        </a>
+                        <a href="codes/clustering/Clustering.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Clustering</span>
+                        </a>
+                        <a href="slides/10_svm.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: SVM</span>
+                        </a>
+                        <a href="slides/12_neural_network.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Neural Networks</span>
+                        </a>
+                        <a href="codes/neural_network/neural_network.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Neural Network</span>
+                        </a>
+                        <a href="codes/neural_network/gadient_descent.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Gradient Descent</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h3 class="module-title">
+                        <span style="color: #f97316;">🟧</span>
+                        Module 2: Mathematical Foundations of AI and Data Science
+                    </h3>
+                    <div class="resource-list">
+                        <a href="slides/02_data_rep.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Data Representation</span>
+                        </a>
+                        <a href="slides/03_feature_engg.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Feature Engineering</span>
+                        </a>
+                        <a href="codes/feature_engineering/FeatureEngineering.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Feature Engineering</span>
+                        </a>
+                        <a href="slides/04_pca.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: PCA</span>
+                        </a>
+                        <a href="slides/05_matrix_decomp.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Matrix Decomposition</span>
+                        </a>
+                        <a href="slides/06_maths_fundamentals.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Mathematical Fundamentals</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h3 class="module-title">
+                        <span style="color: #3b82f6;">🟦</span>
+                        Module 3: Applied Probability and Statistics for AI and Data Science
+                    </h3>
+                    <div class="resource-list">
+                        <a href="slides/07_prob_stat.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Probability and Statistics</span>
+                        </a>
+                        <a href="slides/08_regression.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Regression</span>
+                        </a>
+                        <a href="codes/regression/Regression.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Regression</span>
+                        </a>
+                        <a href="codes/regression/Concrete_Compression_Strength_Prediction.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Concrete Strength Prediction</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h3 class="module-title">
+                        <span style="color: #eab308;">🟨</span>
+                        Module 4: Basics of Data Science
+                    </h3>
+                    <div class="resource-list">
+                        <a href="slides/14_data_science.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Data Science Overview</span>
+                        </a>
+                        <a href="slides/15_visualization.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Visualization</span>
+                        </a>
+                        <a href="slides/16_power_bi.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Power BI</span>
+                        </a>
+                        <a href="codes/powerbi/Experimented.pbix" class="resource-item">
+                            <i class="fas fa-chart-bar resource-icon icon-app"></i>
+                            <span>App: Power BI</span>
+                        </a>
+                        <a href="slides/17_python.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Python</span>
+                        </a>
+                        <a href="codes/python/python_brushup.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Python Brushup</span>
+                        </a>
+                        <a href="codes/python/pandas.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Pandas</span>
+                        </a>
+                        <a href="codes/python/numpy.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Numpy</span>
+                        </a>
+                        <a href="slides/18_numpy.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Numpy</span>
+                        </a>
+                        <a href="slides/19_pandas.pdf" class="resource-item">
+                            <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                            <span>Slides: Pandas</span>
+                        </a>
+                        <a href="codes/python/matplotlib.ipynb" class="resource-item">
+                            <i class="fab fa-python resource-icon icon-code"></i>
+                            <span>Codes: Matplotlib</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-plus"></i>
+                    Additional Resources
+                </h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 1rem; color: #7d8590;">Beyond syllabus but useful for comprehensive learning</p>
+                <div class="resource-list">
+                    <a href="slides/13_deepl_learning.pdf" class="resource-item">
+                        <i class="fas fa-file-powerpoint resource-icon icon-slides"></i>
+                        <span>Slides: Deep Learning</span>
+                    </a>
+                    <a href="codes/image_classification/img_classifier.ipynb" class="resource-item">
+                        <i class="fab fa-python resource-icon icon-code"></i>
+                        <span>Codes: Image Classification</span>
+                    </a>
+                    <a href="codes/feature_engineering/NLP_Basics.ipynb" class="resource-item">
+                        <i class="fab fa-python resource-icon icon-code"></i>
+                        <span>Codes: NLP Basics</span>
+                    </a>
+                    <a href="codes/text_classification/TextClassification.ipynb" class="resource-item">
+                        <i class="fab fa-python resource-icon icon-code"></i>
+                        <span>Codes: Text Classification</span>
+                    </a>
+                    <a href="codes/low_code/PyCaret.ipynb" class="resource-item">
+                        <i class="fab fa-python resource-icon icon-code"></i>
+                        <span>Codes: PyCaret (Low-Code ML)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-tools"></i>
+                    Tools & Technologies Covered
+                </h2>
+            </div>
+            <div class="section-content">
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <i class="fab fa-python" style="color: #3776ab;"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-calculator" style="color: #ff6b6b;"></i>
+                        <span>Numpy</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-table" style="color: #4ecdc4;"></i>
+                        <span>Pandas</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-chart-line" style="color: #45b7d1;"></i>
+                        <span>Matplotlib</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-brain" style="color: #96ceb4;"></i>
+                        <span>Scikit-learn</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-magic" style="color: #feca57;"></i>
+                        <span>PyCaret</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-chart-bar" style="color: #ff9ff3;"></i>
+                        <span>Power BI</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-book" style="color: #54a0ff;"></i>
+                        <span>Jupyter Notebooks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="creator-section">
+            <h2 class="section-title" style="margin-bottom: 2rem;">
+                <i class="fas fa-user-graduate"></i>
+                Creator
+            </h2>
+            <div class="creator-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd4XXuM-XhiZo4YuljwtBSnbaFGxn-wgGqBA&s" alt="Dr. Shailesh Sivan" class="creator-image">
+                <div class="creator-info">
+                    <h3>👨‍🏫 Dr. Shailesh Sivan</h3>
+                    <p>Assistant Professor, Department of Computer Science, CUSAT</p>
+                    <p>Specializing in AI, Data Science, and Academic Enablement</p>
+                    <div class="creator-links">
+                        <a href="mailto:shaileshsivan@gmail.com" class="creator-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>shaileshsivan@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/shaileshsi" class="creator-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
