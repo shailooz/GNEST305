@@ -3,7 +3,7 @@ description: "Structured slides, labs, and resources for KTU S3 Introduction to 
 url: "https://shailooz.github.io/GNEST305"
 baseurl: "" # leave empty if deploying at root
 
-theme: jekyll-theme-minimal
+remote_theme: pages-themes/slate@v0.2.0
 
 repository: shailooz/GNEST305
 
@@ -20,6 +20,7 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 google_analytics: "" # add tracking ID if needed
 
