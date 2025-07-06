@@ -5,9 +5,9 @@ baseurl: "" # leave empty if deploying at root
 
 theme: jekyll-theme-slate
 
-repository: /shailooz/GNEST305
+repository: shailooz/GNEST305
+
 logo: "/assets/logo.png" # add your logo if desired
-favicon: "/assets/favicon.ico" # add favicon if desired
 
 author:
   name: "Dr. Shailesh Sivan"
@@ -23,15 +23,10 @@ plugins:
 
 google_analytics: "" # add tracking ID if needed
 
-# Social Links (optional, remove if not needed)
-social_links:
-  github: https://github.com/shailooz/GNEST305/new/master
-  email: shaileshsivan@gmail.com
-
 # Footer settings
 footer_content: "Maintained for KTU S3 AI & Data Science learners. Share and learn collaboratively."
 
-# Optional navigation links if you expand later
+# Optional navigation links (enable when you add pages)
 # header_pages:
 #   - index.md
 #   - about.md
