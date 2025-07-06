@@ -1,15 +1,13 @@
 title: "KTU S3 AI & Data Science (GNEST305)"
 description: "Structured slides, labs, and resources for KTU S3 Introduction to Artificial Intelligence & Data Science."
 url: "https://shailooz.github.io/GNEST305"
-baseurl: "" # leave empty if deploying at root
+baseurl: ""
 
 remote_theme: pages-themes/hacker@v0.2.0
 
-theme: jekyll-theme-hacker
-
-repository: /shailooz/GNEST305
-logo: "/assets/logo.png" # add your logo if desired
-favicon: "/assets/favicon.ico" # add favicon if desired
+repository: shailooz/GNEST305
+logo: "/assets/logo.png"
+favicon: "/assets/favicon.ico"
 
 author:
   name: "Dr. Shailesh Sivan"
@@ -23,18 +21,10 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-google_analytics: "" # add tracking ID if needed
+google_analytics: ""
 
-# Social Links (optional, remove if not needed)
 social_links:
   github: https://github.com/shailooz/GNEST305/new/master
   email: shaileshsivan@gmail.com
 
-# Footer settings
 footer_content: "Maintained for KTU S3 AI & Data Science learners. Share and learn collaboratively."
-
-# Optional navigation links if you expand later
-# header_pages:
-#   - index.md
-#   - about.md
-#   - contact.md
