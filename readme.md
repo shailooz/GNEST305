@@ -4,6 +4,7 @@
 ![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![KTU](https://img.shields.io/badge/KTU-AI--DS-critical)
+![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=shailooz.GNEST305&left_text=Views)
 
 # 🎓 KTU S3: Introduction to Artificial Intelligence and Data Science (GNEST305)
 
@@ -63,7 +64,8 @@ This repository contains:
 
 - [📄 Slides: Data Science Overview](slides/14_data_science.pdf)
 - [📄 Slides: Visualization](slides/15_visualization.pdf)
-- [📄 Slides: Power BI](slides/16_power_bi.pdf)(codes/powerbi/Experimented.pbix)
+- [📄 Slides: Power BI](slides/16_power_bi.pdf)
+- [🐍 App: Power BI](codes/powerbi/Experimented.pbix)
 - [📄 Slides: Python](slides/17_python.pdf)
 - [🐍 Codes: Python Brushup](codes/python/python_brushup.ipynb)
 - [🐍 Codes: Pandas](codes/python/pandas.ipynb)
@@ -92,6 +94,11 @@ This repository contains:
 ✅ Jupyter Notebooks for experimentation
 
 ---
+
+## ✍️ Creator
+
+
+<table> <tr> <td width="120"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd4XXuM-XhiZo4YuljwtBSnbaFGxn-wgGqBA&s" alt="Dr. Shailesh Sivan" width="100" style="border-radius:50%;"> </td> <td> <h3>👨‍🏫 Dr. Shailesh Sivan</h3> <p>Assistant Professor, Department of Computer Science, CUSAT<br> Specializing in AI, Data Science, and Academic Enablement.</p> <p>📧 <a href="mailto:shaileshsivan@gmail.com">shaileshsivan@gmail.com</a> &nbsp; 🌐 <a href="https://github.com/shaileshsi">GitHub Profile</a></p> </td> </tr> </table>
 
 ## 📂 Repository Structure
 
